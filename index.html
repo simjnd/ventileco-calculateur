@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Trouvez votre moteur</title>
+    <link rel="stylesheet" href="find-your-motor.css">
+    <script src="find-your-motor.js"></script>
+  </head>
+  <body class="bg-neutral-100 py-12 flex justify-center">
+    <!-- main container -->
+    <div class="flex flex-col items-center md:max-w-[640px]">
+      <!-- header container -->
+      <a href="https://ventileco.fr">
+        <div>
+          <h1 class="text-2xl font-bold text-center">Trouvez votre moteur</h1>
+          <h2 class="text-lg font-bold text-center">de ventilation pour hotte ou caisson pro</h2>
+          <div class="flex justify-end items-baseline gap-1"><p>par</p><img class="max-h-6" src="logo.new.svg"></div>
+        </div>
+      </a>
+      <!-- diagram container -->
+      <div class="grid grid-rows-1 grid-cols-1">
+        <img class="col-start-1 col-end-1 row-start-1 row-end-1" src="motor.svg">
+        <img id="a-highlight" class="col-start-1 col-end-1 row-start-1 row-end-1" src="a-highlight.svg">
+        <img id="b-highlight" class="col-start-1 col-end-1 row-start-1 row-end-1 opacity-10" src="b-highlight.svg">
+        <img id="c-highlight" class="col-start-1 col-end-1 row-start-1 row-end-1 opacity-10" src="c-highlight.svg">
+      </div>
+      <!-- instruction container -->
+      <div class="mb-4">
+        <p class="text-xl text-center">Mesurez et saisissez la longueur <span id="length-to-measure">A</span></p>
+        <p class="text-sm text-center">Saisissez la longueur en centimètres</p>
+      </div>
+      <!-- input container -->
+      <div class="flex flex-wrap gap-4 px-8 justify-center">
+        <div id="a-input-group" class="flex flex-col items-center">
+          <label class="font-bold text-sky-400" for="a">A</label>
+          <input id="a-input" class="border-2 border-sky-400 rounded-md px-2 py-1 max-w-24" name="a" type="number" list="a-values" placeholder="A" onfocus="highlight('a')" oninput="find_motor()">
+        </div>
+        <div id="b-input-group" class="flex flex-col items-center opacity-10">
+          <label class="font-bold text-sky-950" for="b">B</label>
+          <input id="b-input" class="border-2 border-sky-950 rounded-md px-2 py-1 max-w-24" name="b" type="number" list="b-values" placeholder="B" onfocus="highlight('b')" oninput="find_motor()">
+        </div>
+        <div id="c-input-group" class="flex flex-col items-center opacity-10">
+          <label class="font-bold text-orange-400" for="c">C</label>
+          <input id="c-input" class="border-2 border-orange-400 rounded-md px-2 py-1 max-w-24" name="c" type="number" list="c-values" placeholder="C" onfocus="highlight('c')" oninput="find_motor()">
+        </div>
+      </div>
+      <!-- result container -->
+      <div id="results" class="flex flex-col gap-4 w-full mt-8 px-8">
+      </div>
+      <!-- disclaimer -->
+      <div class="mt-2">
+        <p class="text-center text-xs text-neutral-400">Les fiches techniques détaillées de chaque produit proposés sont disponibles sur la page du produit. Veuillez les consulter avant commande, <a href="https://ventileco.fr"><span class="font-bold text-sky-400">Ventileco</span></a> ne serait tenu responsable d'une erreur de mesure.</p>
+      </div>
+      <!-- datalist for valid data -->
+      <datalist id="a-values">
+        <option value="23"></option>
+        <option value="25"></option>
+        <option value="30"></option>
+        <option value="32"></option>
+        <option value="38"></option>
+        <option value="50"></option>
+      </datalist>
+      <datalist id="b-values">
+        <option value="10"></option>
+        <option value="21"></option>
+        <option value="26"></option>
+        <option value="29"></option>
+        <option value="34"></option>
+        <option value="40"></option>
+      </datalist>
+      <datalist id="c-values">
+        <option value="20"></option>
+        <option value="33"></option>
+        <option value="39"></option>
+        <option value="44"></option>
+        <option value="53"></option>
+        <option value="63"></option>
+      </datalist>
+    </div>
+    </div>
+  </body>
+</html>
